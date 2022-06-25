@@ -39,6 +39,25 @@ public class BookController {
         return bookRepository.save(book);
     }
 
+    // Update a book entry - Rest api
+    @PutMapping("/book/{id}")
+    public ResponseEntity<Book> updateBook(@PathVariable Long id, @RequestBody Book bookDetails){
+        Book book = bookRepository.findById(id)
+                .orElseThrow(()->new ResourceNotFoundException("Book with id "+id+" does not exit!"));
+
+        book.setAuthor(bookDetails.getAuthor());
+        book.setLanguage(bookDetails.getLanguage());
+        book.setPages(bookDetails.getPages());
+        book.setPublisher(bookDetails.getPublisher());
+        book.setYear(bookDetails.getYear());
+        book.setTitle(bookDetails.getTitle());
+        book.setAvailability(bookDetails.isAvailability());
+
+        Book updatedBook = bookRepository.save(book);
+        return ResponseEntity.ok(updatedBook);
+    }
+
+    // Delete a book entry - Rest api
     @DeleteMapping("/book/{id}")
     public ResponseEntity<Map<String, Boolean>> deleteBook(@PathVariable Long id){
         Book book = bookRepository.findById(id)
