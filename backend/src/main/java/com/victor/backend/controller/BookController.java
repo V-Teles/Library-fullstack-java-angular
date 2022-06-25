@@ -7,7 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import com.victor.backend.repository.BookRepository;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/")
@@ -37,6 +39,16 @@ public class BookController {
         return bookRepository.save(book);
     }
 
+    @DeleteMapping("/book/{id}")
+    public ResponseEntity<Map<String, Boolean>> deleteBook(@PathVariable Long id){
+        Book book = bookRepository.findById(id)
+                .orElseThrow(()->new ResourceNotFoundException("Book with id "+id+" does not exit!"));
+        bookRepository.delete(book);
 
+        Map<String, Boolean> response = new HashMap<>();
+        response.put("deleted", Boolean.TRUE);
+
+        return ResponseEntity.ok(response);
+    }
 
 }
