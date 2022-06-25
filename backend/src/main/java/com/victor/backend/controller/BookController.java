@@ -24,11 +24,19 @@ public class BookController {
     }
 
     // Get book by id - Rest api
-    @GetMapping("/library/{id}")
+    @GetMapping("/book/{id}")
     public ResponseEntity<Book> getBookById(@PathVariable Long id){
         Book book = bookRepository.findById(id)
                 .orElseThrow(()-> new ResourceNotFoundException("Book with id "+id+" does not exit!"));
         return ResponseEntity.ok(book);
     }
+
+    // Create a new book entry - Rest api
+    @PostMapping("/book")
+    public Book createBook(@RequestBody Book book){
+        return bookRepository.save(book);
+    }
+
+
 
 }
