@@ -1,1 +1,40 @@
-<p>library works!</p>
+<h2>Library Catalog</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Publisher</th>
+            <th>Year</th>
+            <th>Language</th>
+            <th>Pages</th>
+            <th>Available</th>
+            <th>Created on</th>
+            <th>Last Update</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let book of books">
+            <td>{{book.title}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.publisher}}</td>
+            <td>{{book.year}}</td>
+            <td>{{book.language}}</td>
+            <td>{{book.pages}}</td>
+            <td>{{book.availability}}</td>
+            <td>{{book.dateCreated | date:'d/MM/yy H:mm:ss'}}</td>
+            <td>{{book.lastUpdate | date:'d/MM/yy H:mm:ss'}}</td>
+            <!--<td>
+                <button (click)="updateEmployee(book.id)"
+                        class="btn btn-primary">Update</button>
+                <button (click)="deleteEmployee(book.id)"
+                        class="btn btn-danger ms-2">Delete</button>
+                <button (click)="employeeDetails(book.id)"
+                        class="btn btn-info ms-2">View</button>
+            
+            </td>-->
+        </tr>
+    </tbody>
+</table>

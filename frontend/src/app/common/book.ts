@@ -6,9 +6,9 @@ export class Book {
     publisher!: string
     year!: number
     language!: string
-    pages!: string
+    pages!: number
     availability!: boolean
-    dateCreated!: Date
-    lastUpdate!: Date
+    dateCreated!: string
+    lastUpdate!: string
 
 }
