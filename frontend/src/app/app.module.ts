@@ -7,6 +7,8 @@ import { CreateBookComponent } from './components/create-book/create-book.compon
 import { BookDetailsComponent } from './components/book-details/book-details.component';
 import { LibraryComponent } from './components/library/library.component';
 import { UpdateBookComponent } from './components/update-book/update-book.component';
+import { FormsModule } from '@angular/forms';
+import { AvailablePipe } from './pipes/available.pipe';
 
 @NgModule({
   declarations: [
@@ -14,12 +16,14 @@ import { UpdateBookComponent } from './components/update-book/update-book.compon
     CreateBookComponent,
     BookDetailsComponent,
     LibraryComponent,
-    UpdateBookComponent
+    UpdateBookComponent,
+    AvailablePipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

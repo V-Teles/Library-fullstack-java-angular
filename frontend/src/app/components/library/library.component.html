@@ -23,18 +23,18 @@
             <td>{{book.year}}</td>
             <td>{{book.language}}</td>
             <td>{{book.pages}}</td>
-            <td>{{book.availability}}</td>
+            <td>{{book.availability | available}}</td>
             <td>{{book.dateCreated | date:'d/MM/yy H:mm:ss'}}</td>
             <td>{{book.lastUpdate | date:'d/MM/yy H:mm:ss'}}</td>
-            <!--<td>
-                <button (click)="updateEmployee(book.id)"
+            <td>
+                <button (click)="updateBook(book.id)"
                         class="btn btn-primary">Update</button>
-                <button (click)="deleteEmployee(book.id)"
+            <!--    <button (click)="deleteBook(book.id)"
                         class="btn btn-danger ms-2">Delete</button>
-                <button (click)="employeeDetails(book.id)"
-                        class="btn btn-info ms-2">View</button>
+                <button (click)="bookDetails(book.id)"
+                        class="btn btn-info ms-2">View</button>-->
             
-            </td>-->
+            </td>
         </tr>
     </tbody>
 </table>
