@@ -29,11 +29,16 @@ export class LibraryComponent implements OnInit {
   updateBook(id: number){
     this.router.navigate(['update-book',id])
   }
-/*
+
   deleteBook(id: number){
-
+    this.libraryService.deleteBook(id).subscribe(
+      data =>{
+        console.log(data)
+        this.getBooks()
+      }
+    )
   }
-
+/*
   bookDetails(id: number){
 
   }

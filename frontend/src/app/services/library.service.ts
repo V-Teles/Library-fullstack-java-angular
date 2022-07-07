@@ -20,7 +20,11 @@ export class LibraryService {
     return this.httpClient.get<Book>(`${this.baseURLBook}/${id}`)
   }
 
-  updateBook(id: number, book: Book){
+  updateBook(id: number, book: Book): Observable<Object>{
     return this.httpClient.put(`${this.baseURLBook}/${id}`, book)
+  }
+
+  deleteBook(id: number): Observable<Object>{
+    return this.httpClient.delete(`${this.baseURLBook}/${id}`)
   }
 }
