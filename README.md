@@ -11,4 +11,5 @@ This app is able to connect to a relational database and create, read, update an
 >> Spring data JPA (Hibernate) | 
 >> Spring MVC |
 >> Lombok |
+>> Rest API |
 >> Intellij
