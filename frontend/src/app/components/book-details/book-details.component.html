@@ -1,1 +1,37 @@
-<p>book-details works!</p>
+<div class="container">
+    <h3>View Book Details</h3>
+    <div>
+        <label><b>Id: </b></label> {{book.id}}
+    </div>
+    <div>
+        <label><b>Title: </b></label> {{book.title}}
+    </div>
+    <div>
+        <label><b>Author: </b></label> {{book.author}}
+    </div>
+    <div>
+        <label><b>Publisher: </b></label> {{book.publisher}}
+    </div>
+    <div>
+        <label><b>Year: </b></label> {{book.year}}
+    </div>
+    <div>
+        <label><b>Author: </b></label> {{book.language}}
+    </div>
+    <div>
+        <label><b>Pages: </b></label> {{book.pages}}
+    </div>
+    <div>
+        <label><b>Available: </b></label> {{book.availability | available}}
+    </div>
+    <div>
+        <label><b>Created on: </b></label> {{book.dateCreated | date:'d/MM/yy H:mm:ss'}}
+    </div>
+    <div>
+        <label><b>Last update: </b></label> {{book.lastUpdate | date:'d/MM/yy H:mm:ss'}}
+    </div>
+    <div class="mt-2">
+        <button (click)="returnToLibrary()"
+                            class="btn btn-primary">Return</button>
+    </div>
+</div>

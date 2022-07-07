@@ -38,9 +38,9 @@ export class LibraryComponent implements OnInit {
       }
     )
   }
-/*
-  bookDetails(id: number){
 
+  bookDetails(id: number){
+    this.router.navigate(['book-details', id])
   }
-*/
+
 }
