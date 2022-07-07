@@ -9,6 +9,7 @@ import { LibraryComponent } from './components/library/library.component';
 import { UpdateBookComponent } from './components/update-book/update-book.component';
 import { FormsModule } from '@angular/forms';
 import { AvailablePipe } from './pipes/available.pipe';
+import { SearchComponent } from './components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AvailablePipe } from './pipes/available.pipe';
     BookDetailsComponent,
     LibraryComponent,
     UpdateBookComponent,
-    AvailablePipe
+    AvailablePipe,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+<form class="mx-2 input-group">
+    <div class="mt-1">
+        <input #myInput type="text"
+            class="form-control"
+            placeholder="Search for book title..."
+            (keyup.enter)="doSearch(myInput.value)"/>
+    </div>
+    <div class="input-group-btn">
+        <button (click)="doSearch(myInput.value)"
+            class="btn btn-primary ms-2 mt-1">
+            Search
+        </button>
+    </div>
+</form>

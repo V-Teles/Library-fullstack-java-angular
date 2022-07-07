@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Book } from '../common/book';
 
 @Injectable({
@@ -30,5 +30,23 @@ export class LibraryService {
 
   createBook(book: Book): Observable<Object>{
     return this.httpClient.post(`${this.baseURLBook}`,book)
+  }
+
+  searchBooks(theKeyword: string): Observable<Book[]> {
+    
+    const searchUrl = `${this.baseURLBook}/search/findByTitleContaining?title=${theKeyword}`;
+
+    return this.getBooks(searchUrl);
+  }
+  private getBooks(searchUrl: string): Observable<Book[]> {
+    return this.httpClient.get<GetResponseBooks>(searchUrl).pipe(
+      map(response => response._embedded.bookSearch)
+    );
+  }
+}
+
+interface GetResponseBooks{
+  _embedded:{
+    bookSearch: Book[];
   }
 }
