@@ -27,4 +27,8 @@ export class LibraryService {
   deleteBook(id: number): Observable<Object>{
     return this.httpClient.delete(`${this.baseURLBook}/${id}`)
   }
+
+  createBook(book: Book): Observable<Object>{
+    return this.httpClient.post(`${this.baseURLBook}`,book)
+  }
 }
