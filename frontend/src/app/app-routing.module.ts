@@ -11,7 +11,7 @@ const routes: Routes = [
   {path: '', redirectTo: 'library', pathMatch: 'full'},
   {path: 'update-book/:id', component: UpdateBookComponent},
   {path: 'book-details/:id', component: BookDetailsComponent},
-  {path: 'search/:keyword', component: LibraryComponent}
+  {path: 'library/search/:keyword', component: LibraryComponent}
 ];
 
 @NgModule({
